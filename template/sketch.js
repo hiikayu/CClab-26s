@@ -5,6 +5,8 @@ let scalii = 1
 function setup() {
   createCanvas(800, 500);
   colorMode(HSB);
+  let canvas = createCanvas(800, 500);
+  canvas.parent("p5-canvas-container")
   // background (198, 8, 96)
 }
 
