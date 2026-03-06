@@ -1,15 +1,9 @@
-/*
-Template for IMA's Creative Coding Lab 
-
-Project A: Generative Creatures
-CCLaboratories Biodiversity Atlas 
-*/
-
 let t = 50;
 let d = 5;
+let ey = 30
+let scalii = 1
 function setup() {
-  let canvas = createCanvas(800, 500);
-  canvas.parent("p5-canvas-container")
+  createCanvas(800, 500);
   colorMode(HSB);
   // background (198, 8, 96)
 }
@@ -23,6 +17,13 @@ function draw() {
   push();
   translate(mouseX, mouseY);
   rotate(frameCount * 0.05);
+    if (mouseIsPressed) {
+    scale(scalii)
+      scalii = scalii + 1/100
+      if (scalii > 2 || scalii < 1) {
+        scalii = - scalii
+      }
+  }
   fill(353, 0, 100);
   noStroke();
   beginShape();
@@ -42,6 +43,8 @@ function draw() {
   let lumoAnimationY = map(noiseval, 0, 1, 200, 300);
   drawLumo(lumoAnimationX, lumoAnimationY);
   // drawLumo(100, 100)
+
+  
 }
 
 function drawLumo(lumoPositionX, lumoPositionY) {
@@ -215,6 +218,23 @@ function drawLumo(lumoPositionX, lumoPositionY) {
     eye1 = 0 - 20 + mouseX / 2;
     eye2 = 0 - 40 + mouseY / 2;
     eyeHeight = 0 - 20 + mouseY / 2;
+    
+    if(mouseIsPressed) {
+      circle(-40+eyeMouseX/30, eyeMouseY / 30, ey)
+      circle(40+eyeMouseX / 30, eyeMouseY / 30, ey)
+      
+      fill(255)
+      circle(-50+eyeMouseX/30, -5+eyeMouseY / 30, ey/3)
+      circle(-35+eyeMouseX/30, 10+eyeMouseY / 30, ey/4)
+      
+      circle(35+eyeMouseX/30, -5+eyeMouseY / 30, ey/3)
+      circle(50+eyeMouseX/30, 10+eyeMouseY / 30, ey/4)
+  
+      ey = ey + 1/25
+      if (ey > 45 || ey < 30) {
+        ey = -ey
+      }
+    }
     pop();
   }
 }
