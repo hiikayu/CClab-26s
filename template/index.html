@@ -1,0 +1,91 @@
+<!-- 
+Template for IMA's Creative Coding Lab 
+
+Project A: Generative Creatures
+CCLaboratories Biodiversity Atlas 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>[ Lumo ]</title>
+
+    <!-- allow special characters, including Arabic, Chinese, Korean, Japanese, etc. -->
+    <meta charset="UTF-8">
+    <!-- link the style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- import p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script>
+        // prevent scrolling when spacebar and arrow keys are pressed.
+        window.addEventListener("keydown", function (e) { if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } }, false);
+    </script>
+</head>
+
+<body>
+    <!-- title -->
+    <div id="title-wrapper">
+        <h1 class="headline black">[ Lumo ! ]</h1>
+    </div>
+
+    <!-- main content -->
+    <div id="main-wrapper">
+        <div id="p5-canvas-container">
+            <!-- This is where your p5 sketch will be appended and appear! -->
+        </div>
+        <div class="two-columns">
+            <div class="left">
+                <h3 class="red">Scientific Name: Luminescent Rosaflexa</h3>
+                <p> or just lumo hehe</p>
+
+                <h3 class="red">Discovered by / at:</h3>
+                <p>It was first discovered in 2026 as a photonic lifeform that produces light and reflects pink color. Lumo was first discovered during an interactive experiment involving light. </p>
+
+                <h3 class="green">Family:</h3>
+                <p>Strong emotional events may cause photonic fragmentation and these fragments of energy could form into new Luminescent Rosaflexa species</p>
+            </div>
+            <div class="right">
+                <h3 class="green">Habitat:</h3>
+                <p>Areas saturated with prismatic light. It lives in desaturated and silent world, where all the color and light lost it emotion</p>
+
+                <h3 class="green">Appearance:</h3>
+                <p>Its body is composed of photonic energy, which appears slightly pink and almost colorless in neutral light. Its color changes based on a concentrated light source. It shares strange resemblance to Jigglypuff</p>
+
+                <h3 class="green">Key Characteristics:</h3>
+                <ul>
+                    <li>Lumo cannot generate its own color.</li>
+                    <li>Direct contact with light source makes it overstimulated.</li>
+                    <li>He is cute</li>
+                </ul>
+            </div>
+        </div>
+        <div class="one-column">
+            <p>
+                <span class="yellow">What we know so far about Lumo?</span>
+                It is really cute and friendly! It does not like being touched, because it doesn’t have a protective layer - 
+                it is a pure light. It is a very emotional creature, it just loves light and color, even if he doesn’t produce ones. It shares it beautiful glow, 
+                gleaming in a silent and melancholic environment it lives in 
+
+                <br>
+                <span class="yellow">Guidelines for human interaction with this creature</span> It can turn to your mouse, which is a concentrated light source! It 
+                increases saturation with the distance between the light and its body. Don’t get too close, or else Lumo will become overwhelmed and spiky!! 
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="black">
+        <p>A CCLab project made by Daiaana K in Spring 2026</p>
+    </div>
+
+    <!-- Home: Link back to the ATLAS page-->
+    <div id="home">
+        <a href="https://cclab.work/atlas">Back to the ATLAS</a>
+    </div>
+
+    <!-- Include your sketch.js file here -->
+    <script src="sketch.js" type="text/javascript"> </script>
+</body>
+
+</html>
