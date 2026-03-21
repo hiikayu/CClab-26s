@@ -47,7 +47,7 @@ function preload() {
   watermelons.push(loadImage("images/watermelon/0" + i + ".png")) 
  }
 
-   for (let i=1; i <= 2; i++){
+   for (let i=1; i <= 7 ; i++){
   polaroid.push(loadImage("images/polaroid/0" + i + ".png")) 
  }
 
