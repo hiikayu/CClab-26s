@@ -127,7 +127,6 @@ function drawtaiga() {
 
     if (scene == 0) {
       for (let i = 0; i < bg.length; i++) {
-        S
         image(bg[i], i * width - sceneScroll, 0);
         image(karina[karinaRunningFrame], 0, 0);
       }
