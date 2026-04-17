@@ -152,6 +152,7 @@ function drawtaiga() {
       image(doggie, 0, 0)
 
     } else if (scene == 4) {
+      //bear
 
     } else if (scene == 5) {
 
