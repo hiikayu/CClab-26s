@@ -265,7 +265,7 @@ function drawtaiga() {
       let scene4Scroll = scroll4 % (4 * width)
 
       for (let i = 0; i < karinapic.length; i++) {
-        image(karinapic[i], i * width - scroll4, 0);
+        image(karinapic[i], i * width - scene4Scroll, 0);
       }
 
       image(scrollpic, 0, 0)
