@@ -262,7 +262,7 @@ function drawtaiga() {
     }
 
     else if (scene == 9) {
-      let scene4Scroll = scroll4 % (5 * width)
+      let scene4Scroll = scroll4 % (4 * width)
 
       for (let i = 0; i < karinapic.length; i++) {
         image(karinapic[i], i * width - scroll4, 0);
