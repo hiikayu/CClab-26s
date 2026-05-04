@@ -8,6 +8,8 @@ let scroll4 = 0
 let startstarter = false
 let paper = []
 let paperAnimation = 0
+let scrollpic
+let clickpic
 
 // menu
 let menu = []
@@ -55,7 +57,8 @@ let bg2 = [];
 
 //seventh scene
 // waiting, maybe forest animation - clicking
-let scene7
+let policemans = []
+let policemananimation = 0
 // eight scene
 // dog came back with policeman - polaroid scrolling !!!!????
 let bg3 = []
@@ -68,7 +71,7 @@ let grassAnimation = 0
 
 
 // last pic of karina in the 11th scene
-let karinapic
+let karinapic = []
 
 
 function preload() {
@@ -108,16 +111,25 @@ function preload() {
   for (let i = 1; i <= 7; i++) {
     grass.push(loadImage("images/09/" + i + ".png"));
   }
+  for (let i = 1; i <= 34; i++) {
+    policemans.push(loadImage("images/07/" + i + ".png"));
+  }
+  for (let i = 1; i <= 5; i++) {
+    karinapic.push(loadImage("images/10/" + i + ".png"));
+  }
 
   // add loops later after finishing drawings !
 
   doggie = loadImage("images/04/1.png")
 
   //beomg = loadImage("images/beom.jfif")
-  scene7 = loadImage("images/07/1.png")
-  karinapic = loadImage("images/10/1.png")
+  //karinapic = loadImage("images/10/1.png")
   backtrack = loadSound("sound/trees.mp3");
   flip = loadSound("sound/page-flip.mp3");
+
+
+  scrollpic = loadImage("images/scroll.png")
+  clickpic = loadImage("images/click.png")
 }
 
 function setup() {
@@ -149,7 +161,7 @@ function drawtaiga() {
   } else {
 
 
-    let sceneScroll = scroll % (3 * width)
+    let sceneScroll = scroll % (4 * width)
     console.log(sceneScroll)
 
 
@@ -162,11 +174,15 @@ function drawtaiga() {
         if (scroll >= (bg.length - 1) * width) {
           scene = 1;
         }
+
+        image(scrollpic, 0, 0)
       }
     } else if (scene == 1) {
 
       image(butterfly[butterflyAnimation], 0, 0)
       butterflyAnimation = (butterflyAnimation + 1) % butterfly.length
+
+      image(clickpic, 0, 0)
 
     } else if (scene == 2) {
 
@@ -181,19 +197,23 @@ function drawtaiga() {
         text("✖", mouseX, mouseY)
       }
 
+      image(clickpic, 0, 0)
+
     } else if (scene == 3) {
       image(doggie, 0, 0)
+      image(clickpic, 0, 0)
 
     } else if (scene == 4) {
       //bear animation 23.04 today
       image(bear[bearAnimation], 0, 0)
       bearAnimation = (bearAnimation + 1) % bear.length
 
+      image(clickpic, 0, 0)
+
     } else if (scene == 5) {
 
-      let scene2Scroll = scroll2 % (3 * width)
+      let scene2Scroll = scroll2 % (4 * width)
 
-      // scene = floor (scroll2 / (3 * width)) the problem is here. i left the click for that
       //if (scroll2 > 4000) {
       //scene = 6
       //}
@@ -208,14 +228,19 @@ function drawtaiga() {
         scene = 6;
       }
 
+      image(scrollpic, 0, 0)
+
     } else if (scene == 6) {
-      image(scene7, 0, 0)
+      image(policemans[policemananimation], 0, 0)
+      policemananimation = (policemananimation + 1) % policemans.length
+
+      image(clickpic, 0, 0)
 
     } else if (scene == 7) {
 
       let scene3Scroll = scroll3 % (4 * width)
 
-      // scene = floor (scroll2 / (3 * width)) the problem is here. i left the click for that
+      // scene = floor (scroll2 / (3 * width)) 
 
       for (let i = 0; i < bg3.length; i++) {
         image(bg3[i], i * width - scene3Scroll, 0);
@@ -224,18 +249,27 @@ function drawtaiga() {
       if (scroll3 >= (bg3.length - 1) * width) {
         scene = 8;
       }
+
+      image(scrollpic, 0, 0)
     }
 
 
     else if (scene == 8) {
       image(grass[grassAnimation], 0, 0)
       grassAnimation = (grassAnimation + 1) % grass.length
+      image(clickpic, 0, 0)
 
     }
 
     else if (scene == 9) {
-      // ending naimation.
-      image(karinapic, 0, 0)
+      let scene4Scroll = scroll4 % (5 * width)
+
+      for (let i = 0; i < karinapic.length; i++) {
+        image(karinapic[i], i * width - scroll4, 0);
+      }
+
+      image(scrollpic, 0, 0)
+
     }
 
     push()
@@ -295,5 +329,8 @@ function mousePressed() {
   } else if (scene == 8) {
     scene = 9
     flip.play();
-  }
+  } else if (scene == 9)
+    scene = 1
+  scroll2 = 0
+  scroll3 = 0
 }
